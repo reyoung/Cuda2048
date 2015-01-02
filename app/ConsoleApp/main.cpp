@@ -7,6 +7,6 @@ int main(){
     using namespace std;
     SimpleGameBoard board(4);
     board.initGame();
-    cout<<board.score();
+    cout<<board.score() <<" "<<board.canMove();
     return 0;
 }

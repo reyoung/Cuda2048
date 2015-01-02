@@ -15,9 +15,9 @@ public:
     };
 
     enum MoveResult {
-        MD_OK = 0,
-        MD_DIE,
-        MD_BADACTION
+        MR_OK = 0,
+        MR_DIE,
+        MR_BADACTION
     };
 
     SimpleGameBoard(int N);
@@ -31,6 +31,10 @@ public:
     virtual void initGame();
 
     virtual MoveResult move(MoveDirection direction);
+
+    virtual bool canMove(MoveDirection direction)const;
+
+    virtual bool canMove()const;
 
     virtual int score(boost::function<int(int)> score_map = defaultScoreEvaluator ) const;
 private:
